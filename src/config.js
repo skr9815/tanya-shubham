@@ -42,10 +42,10 @@ export const wedding = {
     bride: {
       title: 'Bride’s Family',
       hindi: 'वधू पक्ष',
-      relation: ['D/o', ['Shri Brajesh', 'Smt. Vandana Kumari']],
+      relation: ['D/o', ['Shri Brajesh Chandil ', 'Smt. Vandana Chandil']],
       // Full names for the invitation line in the hero
-      parents: 'Shri Brajesh & Smt. Vandana Kumari',
-      grandRelation: ['Grand D/o', ['Late Shri LalChand', 'Late Smt. Kamla Devi']],
+      parents: 'Shri Brajesh & Smt. Vandana Chandil',
+      grandRelation: ['Grand D/o', ['Late Shri LalChand Chandil', 'Late Smt. Kamla Devi']],
       address: 'Lashkar Gwalior, Madhya Pradesh',
     },
   },
