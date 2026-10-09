@@ -45,7 +45,7 @@ export const wedding = {
       relation: ['D/o', ['Shri Brajesh Chandil ', 'Smt. Vandana Chandil']],
       // Full names for the invitation line in the hero
       parents: 'Shri Brajesh & Smt. Vandana Chandil',
-      grandRelation: ['Grand D/o', ['Late Shri LalChand Chandil', 'Late Smt. Kamla Devi']],
+      grandRelation: ['Grand D/o', ['Late Shri LalChand Chandil', 'Smt. Kamla Devi']],
       address: 'Lashkar Gwalior, Madhya Pradesh',
     },
   },
