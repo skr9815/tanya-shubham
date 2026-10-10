@@ -11,7 +11,7 @@ const dayMonth = (iso) => {
 export default function SaveTheDate() {
   return (
     <section id="calendar" className="section section-alt">
-      <h2 className="section-title">Save the Dates</h2>
+      <h2 className="section-title">Save the Date</h2>
       <div className="save-layout">
         <div className="save-dates">
           {wedding.events.map((e) => {

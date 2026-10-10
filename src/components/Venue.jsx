@@ -4,7 +4,7 @@ import InvitationCard from './InvitationCard.jsx'
 export default function Venue() {
   return (
     <section id="venue" className="section">
-      <h2 className="section-title">Venues</h2>
+      <h2 className="section-title">Venue</h2>
       <div className="venues">
         {wedding.venues.map((v) => (
           <div key={v.mapLink} className="venue">

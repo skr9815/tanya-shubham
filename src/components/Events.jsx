@@ -63,7 +63,7 @@ function EventScreen({ event: e, index, total }) {
       </div>
       <div className="event-stage">
         <div className="event-frame">
-          <p className="event-count">{String(index + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}</p>
+          {total > 1 && <p className="event-count">{String(index + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}</p>}
           <img className="event-medallion" src={e.icon} alt="" />
           <p className="event-hindi">{e.hindi}</p>
           <h3 className="event-name">{e.name}</h3>

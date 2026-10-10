@@ -366,6 +366,7 @@ img { max-width: 100%; }
 
 /* Venues */
 .venues { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; max-width: 1100px; margin: 0 auto; }
+.venue:only-child { justify-self: center; width: 100%; max-width: 600px; }
 .venue-label { font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; color: var(--saffron); }
 .venue-name { font-family: var(--serif); font-size: 1.8rem; font-weight: 600; color: var(--maroon); }
 .venue-address { margin-bottom: 1.2rem; }
