@@ -1,14 +1,11 @@
-import { useEffect, useState } from 'react'
 import { QRCodeSVG } from 'qrcode.react'
-import { wedding } from '../config.js'
 
 function Soon({ children }) {
   return <p className="invite-card-soon">{children}</p>
 }
 
 // Video invitation, opened on YouTube
-function DigitalInvitation() {
-  const url = wedding.digitalInvitation
+function DigitalInvitation({ url }) {
   return (
     <div className="invite-card-box">
       <span className="invite-card-icon" aria-hidden="true">
@@ -30,8 +27,7 @@ function DigitalInvitation() {
 }
 
 // Photographer's face-recognition gallery: a button for guests on their phones, and a QR code to scan from a big screen
-function PhotoGallery() {
-  const url = wedding.photoGallery
+function PhotoGallery({ url }) {
   return (
     <div className="invite-card-box">
       <span className="invite-card-icon" aria-hidden="true">
@@ -59,21 +55,8 @@ function PhotoGallery() {
   )
 }
 
-// View / download buttons for the printable invitation card, shown once the file has been uploaded to public/
-function PrintedInvitation() {
-  const url = wedding.invitationCard
-  const [ready, setReady] = useState(false)
-
-  useEffect(() => {
-    if (!url) return
-    // Missing files come back as the site's own HTML page, so check the type as well as the status
-    fetch(url, { method: 'HEAD' })
-      .then((res) => setReady(res.ok && !(res.headers.get('content-type') || '').includes('text/html')))
-      .catch(() => setReady(false))
-  }, [url])
-
-  const fileName = `Tanya-Shubham-Invitation${url ? url.slice(url.lastIndexOf('.')) : ''}`
-
+// View / download buttons for the printable invitation card, shown once the file is available
+function PrintedInvitation({ url, ready, fileName }) {
   return (
     <div className="invite-card-box">
       <span className="invite-card-icon" aria-hidden="true">
@@ -96,12 +79,12 @@ function PrintedInvitation() {
   )
 }
 
-export default function InvitationCard() {
+export default function InvitationCards({ printed, digitalUrl, galleryUrl }) {
   return (
     <div className="invite-cards">
-      <PrintedInvitation />
-      <DigitalInvitation />
-      <PhotoGallery />
+      <PrintedInvitation {...printed} />
+      <DigitalInvitation url={digitalUrl} />
+      <PhotoGallery url={galleryUrl} />
     </div>
   )
 }

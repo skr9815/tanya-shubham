@@ -1,7 +1,7 @@
-import { wedding } from '../config.js'
 import { Toran, Mandala } from './Decor.jsx'
 
-export default function Hero() {
+// `children` fills the date slot at the bottom of the card
+export default function Hero({ bride, groom, namesHindi, parents, children }) {
   return (
     <header id="home" className="hero">
       {/* Brightened copies of the palace photo, revealed through drifting dot masks, make its lights twinkle */}
@@ -21,18 +21,26 @@ export default function Hero() {
         </p>
         <p className="eyebrow">Shubh Vivah · शुभ विवाह</p>
         <h1 className="names">
-          {wedding.bride} <span className="amp">&</span> {wedding.groom}
+          {bride} <span className="amp">&</span> {groom}
         </h1>
-        <p className="names-hindi">{wedding.brideTitleHindi} {wedding.brideHindi} ❤ {wedding.groomTitleHindi} {wedding.groomHindi}</p>
+        <p className="names-hindi">{namesHindi.brideTitle} {namesHindi.bride} ❤ {namesHindi.groomTitle} {namesHindi.groom}</p>
         <p className="invite">
-          With the blessings of Lord Ganesha and our elders, {wedding.families.bride.parents} joyfully
-          invite you to the wedding of their beloved daughter <strong>{wedding.bride}</strong> with <strong>{wedding.groom}</strong>,
+          With the blessings of Lord Ganesha and our elders, {parents} joyfully
+          invite you to the wedding of their beloved daughter <strong>{bride}</strong> with <strong>{groom}</strong>,
           as they begin their journey of forever
         </p>
         <div className="divider">❁ ❁ ❁</div>
-        <p className="hero-date">{wedding.displayDate}</p>
-        <p className="hero-city">{wedding.city}</p>
+        {children}
       </div>
     </header>
+  )
+}
+
+export function HeroDate({ date, city }) {
+  return (
+    <>
+      <p className="hero-date">{date}</p>
+      <p className="hero-city">{city}</p>
+    </>
   )
 }
